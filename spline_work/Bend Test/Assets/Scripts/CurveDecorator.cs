@@ -30,7 +30,27 @@ public class CurveDecorator : MonoBehaviour
         {
             Redecorate();
         }
-        
+
+        if (Input.GetKey(KeyCode.Keypad1))
+        {
+            Redecorate();
+        }
+
+        if (Input.GetKey(KeyCode.Keypad3))
+        {
+            Redecorate();
+        }
+
+        if (Input.GetKey(KeyCode.Keypad4))
+        {
+            Redecorate();
+        }
+
+        if (Input.GetKey(KeyCode.Keypad6))
+        {
+            Redecorate();
+        }
+
     }
 
     private void Decorate()

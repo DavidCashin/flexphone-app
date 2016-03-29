@@ -21,16 +21,35 @@ public class SplineDecorator : MonoBehaviour
     private void Update()
     {
 
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.Keypad7))
         {
             Redecorate();
         }
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.Keypad9))
         {
             Redecorate();
         }
 
+        if (Input.GetKey(KeyCode.Keypad1))
+        {
+            Redecorate();
+        }
+
+        if (Input.GetKey(KeyCode.Keypad3))
+        {
+            Redecorate();
+        }
+
+        if (Input.GetKey(KeyCode.Keypad4))
+        {
+            Redecorate();
+        }
+
+        if (Input.GetKey(KeyCode.Keypad6))
+        {
+            Redecorate();
+        }
     }
 
     private void Decorate()
