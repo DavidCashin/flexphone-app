@@ -4,32 +4,33 @@ using System.Collections;
 public class BendInputCurve : MonoBehaviour {
 
     public float bendSpeed;
+    public float bendLimit;
 
     public BezierCurve[] xCurves;
     public BezierCurve[] zCurves;
 
     void Update () {
-        if (Input.GetKey(KeyCode.Keypad7)) //top-corner-bend-up (lava moves towards bottom-left)
+        if (Input.GetKey(KeyCode.Keypad7) && (xCurves[3].points[0].y < bendLimit)) //top-corner-bend-up (lava moves towards bottom-left)
         {
             NorthEastUp();
         }
-        else if (Input.GetKey(KeyCode.Keypad9)) //top-corner-bend-down (lava moves towards top-right)
+        else if (Input.GetKey(KeyCode.Keypad9) && (xCurves[3].points[0].y > -bendLimit)) //top-corner-bend-down (lava moves towards top-right)
         {
             NorthEastDown();
         }
-        else if (Input.GetKey(KeyCode.Keypad1)) //bottom-corner-bend-up (lava moves towards top-left)
+        else if (Input.GetKey(KeyCode.Keypad1) && (xCurves[0].points[0].y < bendLimit)) //bottom-corner-bend-up (lava moves towards top-left)
         {
             SouthEastUp();
         }
-        else if (Input.GetKey(KeyCode.Keypad3)) //bottom-corner-bend-down (lava moves towards bottom-right)
+        else if (Input.GetKey(KeyCode.Keypad3) && (xCurves[0].points[0].y > -bendLimit)) //bottom-corner-bend-down (lava moves towards bottom-right)
         {
             SouthEastDown();
         }
-        else if (Input.GetKey(KeyCode.Keypad4)) //midline-bend-up (lava moves towards left)
+        else if (Input.GetKey(KeyCode.Keypad4) && (xCurves[3].points[0].y < bendLimit) && (xCurves[0].points[0].y < bendLimit)) //midline-bend-up (lava moves towards left)
         {
             EastUp();
         }
-        else if (Input.GetKey(KeyCode.Keypad6)) //midline-bend-down (lava moves towards right)
+        else if (Input.GetKey(KeyCode.Keypad6) && (xCurves[3].points[0].y > -bendLimit) && (xCurves[0].points[0].y > -bendLimit)) //midline-bend-down (lava moves towards right)
         {
             EastDown();
         }
